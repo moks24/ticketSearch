@@ -18,6 +18,5 @@ public class TicketOffer implements Comparable<TicketOffer>{
     public int compareTo(TicketOffer o) {
         TicketOffer p = (TicketOffer) o;
         return price -p.price;
-        //TODO "доделать метод"
     }
 }
