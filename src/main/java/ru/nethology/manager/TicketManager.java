@@ -1,4 +1,4 @@
-package ru.nethology.ru.nethology.manager;
+package ru.nethology.manager;
 
 import ru.nethology.domain.TicketOffer;
 import ru.nethology.repository.TicketRepository;
@@ -24,15 +24,12 @@ public class TicketManager {
         TicketOffer[] result = new TicketOffer[0];
         for (TicketOffer ticket : repository.findAll()) {
             if (matches(ticket, from)) {
-                if (matches(ticket, to)) {
-                }
                 TicketOffer[] tmp = new TicketOffer[result.length + 1];
                 System.arraycopy(result,0, tmp, 0,result.length);
                 tmp[tmp.length - 1] = ticket;
                 result = tmp;
-                Arrays.sort(result);
             }
-
+            Arrays.sort(result);
         }
         return result;
     }
